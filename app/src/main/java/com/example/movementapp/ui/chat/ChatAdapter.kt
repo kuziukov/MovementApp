@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import com.example.movementapp.R
 
 class ChatAdapter (private val context: Context,
@@ -17,8 +18,10 @@ class ChatAdapter (private val context: Context,
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var dataitem = dataList[position]
 
-
         val rowView = getCustomView(position, parent)
+        val message_body = rowView?.findViewById(R.id.message_body) as TextView
+
+        message_body.text = dataitem
 
         rowView!!.tag = position
         return rowView

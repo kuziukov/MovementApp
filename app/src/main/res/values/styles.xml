@@ -16,7 +16,7 @@
     </style>
 
     <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textColor">@color/colorLightBlack</item>
     </style>
 
     <style name="ActionBar.Solid.Ribbit.TitleTextStyle"

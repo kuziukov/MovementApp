@@ -5,8 +5,10 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorNavigation">#f187a9</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorLightWhite">#C9FFFFFF</color>
+    <color name="colorLightWhite">#F4F1F1</color>
     <color name="colorGray">#808080</color>
     <color name="colorLightGray">#f1f1f1</color>
     <color name="colorCaption">#151515</color>
+    <color name="colorLightBlack">#595757</color>
+
 </resources>
