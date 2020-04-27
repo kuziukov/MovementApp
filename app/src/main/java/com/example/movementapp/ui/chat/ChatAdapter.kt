@@ -17,9 +17,19 @@ class ChatAdapter (private val context: Context,
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var dataitem = dataList[position]
 
-        val rowView = inflater.inflate(R.layout.list_item_message_sent, parent, false)
 
-        rowView.tag = position
+        val rowView = getCustomView(position, parent)
+
+        rowView!!.tag = position
         return rowView
+    }
+
+    fun getCustomView(position: Int, parent: ViewGroup): View? {
+        if((position % 2) == 0){
+            return inflater.inflate(R.layout.list_item_message_sent, parent, false)
+        }
+        else {
+            return inflater.inflate(R.layout.list_item_message_received, parent, false)
+        }
     }
 }
