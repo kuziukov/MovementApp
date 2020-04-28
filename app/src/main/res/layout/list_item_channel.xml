@@ -61,17 +61,30 @@
         android:textColor="#FFF"
         android:textSize="10sp" />
 
+
+    <ImageView
+        android:id="@+id/chat_last_message_status"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_below="@id/chat_name_txt"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/icon"
+        android:layout_toRightOf="@id/icon"
+        app:srcCompat="@drawable/ic_done_all_black_24dp" />
+
     <TextView
         android:id="@+id/chat_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/chat_name_txt"
         android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/icon"
-        android:layout_toRightOf="@id/icon"
+        android:layout_marginLeft="2dp"
+        android:maxWidth="220dp"
+        android:layout_toEndOf="@+id/chat_last_message_status"
+        android:layout_toRightOf="@id/chat_last_message_status"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="Hey! How are you?"
+        android:text="jkhdsakjdhsakjdhaskjdhk jshadkjhsadkjshadksahdkjsahdkahsljkdjsadjaskdjsajd slajdlksajdlksajdklsajdl"
         android:textColor="@color/colorGray"
         android:textSize="14sp" />
 

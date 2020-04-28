@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -51,6 +52,12 @@ class NotificationsFragment : Fragment() {
             listItems
         )
         listView.adapter = adapter
+
+        listView.setOnItemLongClickListener(AdapterView.OnItemLongClickListener { arg0, arg1, pos, arg3 ->
+            val dialogChannelFragment = DialogChannelFragment()
+            dialogChannelFragment.show(childFragmentManager, "ChannelFragment_tag")
+            true
+        })
 
         listView.setOnItemClickListener { parent, view, position, id ->
 
