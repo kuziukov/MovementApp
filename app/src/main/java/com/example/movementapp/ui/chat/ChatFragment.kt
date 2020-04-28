@@ -46,6 +46,8 @@ class ChatFragment : Fragment() {
         listItems.add("12")
         listItems.add("1")
         listItems.add(")")
+        listItems.add("Somehow this layout is not working for me. All I see is a white little round corner rectangle at the top left corner and a bigger grey arrow is seen overlapped. Any idea what am I missing?")
+        listItems.add("Somehow this layout is not working for me. All I see is a white little round corner rectangle at the top left corner and a bigger grey arrow is seen overlapped. Any idea what am I missing?")
 
         val adapter = ChatAdapter(
             requireContext(),
