@@ -35,4 +35,9 @@
         android:name="com.example.movementapp.ui.chat.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/navigation_trips"
+        android:name="com.example.movementapp.ui.trip.TripsFragment"
+        android:label="@string/title_trips"
+        tools:layout="@layout/fragment_trips" />
 </navigation>

@@ -1,6 +1,8 @@
 package com.example.movementapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +32,18 @@ class MainActivity : AppCompatActivity() {
                 R.id.fragment_chat -> navView?.visibility = View.GONE
                 else -> navView?.visibility = View.VISIBLE
             }
+        }
+    }
+
+    companion object {
+        const val LOCATION_SETTING_REQUEST = 999
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        for (fragment in supportFragmentManager.fragments) {
+            fragment.onActivityResult(requestCode, resultCode, data)
         }
     }
 
