@@ -38,13 +38,12 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCa
 
 class TripsFragment : Fragment() {
 
-    var PERMISSION_ID = 44
+    private var PERMISSION_ID = 44
     lateinit var mFusedLocationClient: FusedLocationProviderClient
     lateinit var gMap: GoogleMap
 
     private val callback = OnMapReadyCallback { googleMap ->
         gMap = googleMap
-        //getLastLocation();
     }
 
     private fun requestPermissions() {
@@ -99,7 +98,6 @@ class TripsFragment : Fragment() {
                     }
                 )
             } else {
-
                 showEnableLocationSetting()
             }
         } else {
@@ -135,23 +133,61 @@ class TripsFragment : Fragment() {
         }
     }
 
+    private fun showEnableLocationSetting() {
+        activity?.let {
+            val locationRequest = LocationRequest.create()
+            locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+
+            val builder = LocationSettingsRequest.Builder()
+                .addLocationRequest(locationRequest)
+
+            val task = LocationServices.getSettingsClient(it)
+                .checkLocationSettings(builder.build())
+
+            task.addOnSuccessListener { response ->
+                val states = response.locationSettingsStates
+                if (states.isLocationPresent) {
+                    //Do something
+                }
+            }
+            task.addOnFailureListener { e ->
+                if (e is ResolvableApiException) {
+                    try {
+                        startIntentSenderForResult(
+                            e.resolution.intentSender,
+                            MainActivity.LOCATION_SETTING_REQUEST,
+                            null,
+                            0,
+                            0,
+                            0,
+                            null
+                        );
+                        /**
+                          e.startResolutionForResult(
+                            it,
+                            MainActivity.LOCATION_SETTING_REQUEST
+                        )**/
+                    } catch (sendEx: IntentSender.SendIntentException) {
+                    }
+                }
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_trips, container, false)
-
         val bottom_sheet: LinearLayout = root.findViewById(R.id.bottom_sheet)
         val sheetBehavior = BottomSheetBehavior.from(bottom_sheet);
         val location: CardView = root.findViewById(R.id.location)
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-
         location.setOnClickListener {
             getLastLocation()
         }
-
 
         sheetBehavior.setBottomSheetCallback(object : BottomSheetCallback() {
             override fun onStateChanged(@NonNull view: View, newState: Int) {
@@ -177,65 +213,27 @@ class TripsFragment : Fragment() {
         return root
     }
 
-    private fun showEnableLocationSetting() {
-        activity?.let {
-            val locationRequest = LocationRequest.create()
-            locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-
-            val builder = LocationSettingsRequest.Builder()
-                .addLocationRequest(locationRequest)
-
-            val task = LocationServices.getSettingsClient(it)
-                .checkLocationSettings(builder.build())
-
-            task.addOnSuccessListener { response ->
-                val states = response.locationSettingsStates
-                if (states.isLocationPresent) {
-                    //Do something
-                }
-            }
-            task.addOnFailureListener { e ->
-                if (e is ResolvableApiException) {
-                    try {
-                        // Handle result in onActivityResult()
-                        e.startResolutionForResult(it,
-                            MainActivity.LOCATION_SETTING_REQUEST)
-                    } catch (sendEx: IntentSender.SendIntentException) { }
-                }
-            }
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        mapFragment?.getMapAsync(callback)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d("onActivityResult()", Integer.toString(resultCode));
+        super.onActivityResult(requestCode, resultCode, data)
 
         when (requestCode) {
             MainActivity.LOCATION_SETTING_REQUEST -> when (resultCode) {
                 Activity.RESULT_OK -> {
-
-                    // All required changes were successfully made
-                    Toast.makeText(activity, "Location enabled by user!", Toast.LENGTH_LONG)
-                        .show()
+                    getLastLocation()
                 }
                 Activity.RESULT_CANCELED -> {
 
-                    // The user was asked to change settings, but chose not to
-                    Toast.makeText(
-                        activity,
-                        "Location not enabled, user cancelled.",
-                        Toast.LENGTH_LONG
-                    ).show()
                 }
                 else -> {
                 }
             }
         }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment?.getMapAsync(callback)
     }
 
     override fun onResume() {
