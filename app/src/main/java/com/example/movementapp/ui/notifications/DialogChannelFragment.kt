@@ -28,7 +28,6 @@ class DialogChannelFragment : DialogFragment() {
         myListView!!.adapter =
             ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, pioneers)
 
-        this.dialog.setTitle("Tech Pioneers")
 
         myListView.setOnItemClickListener { adapterView,
                                             view,
