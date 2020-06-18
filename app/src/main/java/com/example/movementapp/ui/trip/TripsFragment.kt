@@ -212,8 +212,6 @@ class TripsFragment : Fragment() {
             override fun onSlide(@NonNull view: View, v: Float) {}
         })
 
-        getLastLocation()
-
         return root
     }
 

@@ -53,6 +53,14 @@ class MainActivity : AppCompatActivity() {
         // Whenever the selected controller changes, setup the action bar.
         controller.observe(this, Observer { navController ->
             setupActionBarWithNavController(navController)
+
+            navController.addOnDestinationChangedListener { _, destination, _ ->
+                when (destination.id) {
+                    R.id.fragment_chat -> bottomNavigationView?.visibility = View.GONE
+                    else -> bottomNavigationView?.visibility = View.VISIBLE
+                }
+            }
+
         })
         currentNavController = controller
     }

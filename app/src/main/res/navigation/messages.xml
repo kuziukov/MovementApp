@@ -14,6 +14,7 @@
             android:id="@+id/action_navigation_notifications_to_chatFragment"
             app:destination="@id/chatFragment"
             app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/fragment_fade_exit"
             app:launchSingleTop="true"
             app:popEnterAnim="@android:anim/fade_in" />
     </fragment>
