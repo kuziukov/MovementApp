@@ -22,8 +22,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/location"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
             android:layout_gravity="bottom|right"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
@@ -32,7 +32,7 @@
             android:tint="@color/colorLightBlack"
             app:borderWidth="0dp"
             app:cardCornerRadius="19dp"
-            app:cardElevation="4dp"
+            app:cardElevation="1dp"
             app:srcCompat="@drawable/ic_near_me">
 
             <ImageView
@@ -75,6 +75,7 @@
                     android:background="@android:color/transparent"
                     android:hint="Going to"
                     android:inputType="text"
+                    android:textColor="@color/colorGray"
                     android:maxLines="1"
                     android:paddingLeft="25dp"
                     android:paddingBottom="10dp"
