@@ -15,7 +15,6 @@ import com.example.movementapp.R
 class Step1Fragment : Fragment() {
 
     private lateinit var homeViewModel: Step1ViewModel
-    private var PERMISSION_ID = 100
 
     override fun onCreateView(
             inflater: LayoutInflater,
