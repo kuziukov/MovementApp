@@ -4,5 +4,9 @@
     <string name="title_dashboard">Places</string>
     <string name="title_notifications">Messages</string>
     <string name="title_trips">Trips</string>
+    <string name="title_login">Your phone</string>
+    <string name="title_login_step_2">Verify your phone</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="step_1_text">Application will send an SMS message to verify your phone number. Enter your country code and phone number.</string>
 
 </resources>
