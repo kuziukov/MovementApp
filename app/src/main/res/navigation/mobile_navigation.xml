@@ -3,7 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_login_step_1">
+    app:startDestination="@+id/navigation_landing">
+
+    <fragment
+        android:id="@+id/navigation_landing"
+        android:name="com.example.movementapp.ui.login.LandingFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_navigation_landing_to_navigation_login_step_1"
+            app:destination="@id/navigation_login_step_1"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@android:anim/fade_in" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_login_step_1"
@@ -12,22 +25,28 @@
         tools:layout="@layout/fragment_login_step_1" >
         <action
             android:id="@+id/action_navigation_login_step_1_to_navigation_login_step_2"
-            app:destination="@id/navigation_login_step_2" />
+            app:destination="@id/navigation_login_step_2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@android:anim/fade_in" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_login_step_2"
-        android:name="com.example.movementapp.ui.dashboard.DashboardFragment"
+        android:name="com.example.movementapp.ui.login.Step2Fragment"
         android:label="@string/title_login_step_2"
         tools:layout="@layout/fragment_login_step_2" >
         <action
             android:id="@+id/action_navigation_login_step_2_to_navigation_login_step_3"
-            app:destination="@id/navigation_login_step_3" />
+            app:destination="@id/navigation_login_step_3"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@android:anim/fade_in" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_login_step_3"
-        android:name="com.example.movementapp.ui.notifications.NotificationsFragment"
+        android:name="com.example.movementapp.ui.login.Step3Fragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_login_step_3" />
 </navigation>
