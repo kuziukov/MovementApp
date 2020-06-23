@@ -37,4 +37,10 @@
         <item name="android:textColor">@color/colorCaption</item>
     </style>
 
+    <style name="LadningTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/colorWhite</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+    </style>
+
 </resources>
