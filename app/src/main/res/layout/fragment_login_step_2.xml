@@ -37,8 +37,6 @@
         android:id="@+id/code_step_2"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/edittext_center"
         android:ems="10"
@@ -51,8 +49,8 @@
         android:singleLine="true"
         android:textColor="@color/colorLightBlack"
         android:textColorHint="@color/colorGray"
-        app:layout_constraintRight_toRightOf="@id/code_step_2"
-        app:layout_constraintStart_toStartOf="@id/step_1_text_addition"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/step_1_text_addition"
         app:layout_constraintWidth_percent="0.7" />
 
