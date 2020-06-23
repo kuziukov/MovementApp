@@ -14,7 +14,6 @@ import androidx.navigation.Navigation
 import com.example.movementapp.LoginActivity
 import com.example.movementapp.MainActivity
 import com.example.movementapp.R
-import com.example.movementapp.SplashActivity
 
 
 class LandingFragment : Fragment() {
