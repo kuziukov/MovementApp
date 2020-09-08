@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/messages"
-    app:startDestination="@+id/navigation_notifications">
+    app:startDestination="@+id/navigation_notifications"
+    tools:ignore="UnusedNavigation">
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -13,10 +14,11 @@
         <action
             android:id="@+id/action_navigation_notifications_to_chatFragment"
             app:destination="@id/chatFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@anim/fragment_fade_exit"
+            app:enterAnim="@animator/slide_left_in"
+            app:exitAnim="@animator/slide_left_out"
             app:launchSingleTop="true"
-            app:popEnterAnim="@android:anim/fade_in" />
+            app:popEnterAnim="@animator/slide_right_in"
+            app:popExitAnim="@animator/slide_right_out" />
     </fragment>
 
     <fragment

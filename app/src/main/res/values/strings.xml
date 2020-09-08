@@ -18,4 +18,33 @@
     <string name="welcome">Welcome to APP</string>
     <string name="privacy">Read our Privacy Policy. Tap \'Agree and continue\' to accept the Terms of Service.</string>
 
+    <string name="style_json">[
+          {
+            "featureType": "poi.business",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          }
+    ]
+    </string>
+
 </resources>

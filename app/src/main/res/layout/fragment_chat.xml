@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_chat"
     android:paddingTop="?attr/actionBarSize"
+    android:background="?android:attr/windowBackground"
+    android:elevation="2dp"
     tools:context=".ui.chat.ChatFragment">
 
     <ListView
