@@ -12,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
@@ -30,11 +29,13 @@ import com.example.movementapp.controller.UserController
 import com.google.gson.Gson
 
 
+// TODO сделать обратный отсчет и повторный запрос после указанного времени
+
 class Step2Fragment : Fragment() {
 
-    private lateinit var homeViewModel: Step2ViewModel
-    private lateinit var navController: NavController
     val privateStore = "privateStore"
+    private lateinit var navController: NavController
+    private lateinit var homeViewModel: Step2ViewModel
     private lateinit var store: SharedPreferences.Editor
 
     @SuppressLint("CommitPrefEdits")
@@ -80,8 +81,7 @@ class Step2Fragment : Fragment() {
         override fun onResponse(responseAPI: ResponseAPI?) {
             println(responseAPI?.result.toString())
             val token: Token = Gson().fromJson(responseAPI?.result.toString(), Token::class.java)
-            store.putString("access_token", token.access_token.toString())
-            store.putString("expires_in", token.expires_in.toString())
+            store.putString("token", Token().dump(token))
             store.commit()
 
             val userController = UserController(userCallBack)

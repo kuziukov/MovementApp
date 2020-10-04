@@ -1,14 +1,14 @@
 package com.example.movementapp
 
-import com.example.movementapp.adapters.CodeVerification
-import com.example.movementapp.adapters.PhoneVerification
-import com.example.movementapp.adapters.ResponseAPI
-import com.example.movementapp.adapters.User
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import com.example.movementapp.adapters.CodeVerification
+import com.example.movementapp.adapters.PhoneVerification
+import com.example.movementapp.adapters.ResponseAPI
+import com.example.movementapp.adapters.User
 
 interface RideeAPI {
     interface APICallBack {

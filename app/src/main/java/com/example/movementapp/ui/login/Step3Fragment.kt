@@ -12,7 +12,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
@@ -21,6 +20,7 @@ import com.example.movementapp.R
 import com.example.movementapp.RideeAPI
 import com.example.movementapp.SplashActivity
 import com.example.movementapp.adapters.ResponseAPI
+import com.example.movementapp.adapters.Token
 import com.example.movementapp.adapters.User
 import com.example.movementapp.controller.UserPostController
 import com.google.gson.Gson
@@ -29,11 +29,11 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class Step3Fragment : Fragment() {
 
-    private lateinit var homeViewModel: Step3ViewModel
-    private lateinit var phofile_avatar: CircleImageView
     val GALLERY_REQUEST = 1001
     val privateStore = "privateStore"
     private lateinit var store: SharedPreferences
+    private lateinit var homeViewModel: Step3ViewModel
+    private lateinit var phofile_avatar: CircleImageView
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -58,8 +58,9 @@ class Step3Fragment : Fragment() {
             user.name = first_name.text.toString()
             user.surname = second_name.text.toString()
             val userPostController = UserPostController(userCallBack)
-            println("access_token " + store.getString("access_token", "").toString())
-            userPostController.start(user, store.getString("access_token", "").toString())
+
+            val token: Token = Token().load(store.getString("token", "{}").toString())
+            userPostController.start(user, token.access_token.toString())
         })
 
         return root
