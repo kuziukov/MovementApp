@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     android:paddingBottom="?attr/actionBarSize"
     android:paddingTop="?attr/actionBarSize"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".ui.chats.ChatsFragment">
 
     <ListView
         android:id="@+id/list_channels"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="false"
         android:divider="@null"
         android:dividerHeight="0dp"
         tools:ignore="MissingConstraints"

@@ -1,18 +1,22 @@
 package com.example.movementapp.ui.login
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.example.movementapp.LoginActivity
-import com.example.movementapp.MainActivity
 import com.example.movementapp.R
 
 
@@ -28,25 +32,27 @@ class LandingFragment : Fragment() {
         homeViewModel =
                 ViewModelProviders.of(this).get(LandingViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_landing, container, false)
-        //val textView: TextView = root.findViewById(R.id.text_home)
         val navController = Navigation.findNavController(context as Activity, R.id.nav_login_fragment);
         val login_button_step_1: Button = root.findViewById(R.id.login_button_step_1)
-        val landing_image: ImageView = root.findViewById(R.id.landing_image)
+        val privacy_info: TextView = root.findViewById(R.id.privacy_info)
+        privacy_info.movementMethod = LinkMovementMethod.getInstance()
 
         (activity as LoginActivity?)!!.changeToolBarTitle(R.string.empty)
 
-        /*homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })*/
-
-        landing_image.setOnClickListener(View.OnClickListener {
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        })
-
         login_button_step_1.setOnClickListener(View.OnClickListener {
-            navController.navigate(R.id.action_navigation_landing_to_navigation_login_step_1)
+
+            val scale: Animator = ObjectAnimator.ofPropertyValuesHolder(it,
+                PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, 0.9f, 1f),
+                PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, 0.9f, 1f)
+            )
+            scale.duration = 200
+            scale.addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    super.onAnimationEnd(animation)
+                    navController.navigate(R.id.action_navigation_landing_to_navigation_login_step_1)
+                }
+            })
+            scale.start()
         })
 
         return root

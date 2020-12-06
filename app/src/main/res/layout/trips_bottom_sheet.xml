@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="250dp"
+    app:behavior_peekHeight="222dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <androidx.cardview.widget.CardView
@@ -47,8 +47,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,13 +60,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.7" />
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="From: " />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="(51)" />
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="Moscow" />
 
             </LinearLayout>
 
@@ -76,11 +79,26 @@
                 android:layout_marginBottom="12dp"
                 android:background="#5d5d5d" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12 min away"
-                android:textColor="#5692F5" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="To: " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="#5692F5"
+                    android:text="Kazan (699 км)" />
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -93,36 +111,14 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_done_all_black_24dp"
-        android:drawablePadding="16dp"
-        android:text="740 Valencia St, San Fracisco, CA" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_done_all_black_24dp"
-        android:drawablePadding="16dp"
-        android:text="(415) 349-0942" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_attach_file"
-        android:drawablePadding="16dp"
-        android:text="Wed, 10 AM - 9 PM" />
-
-    <Button
+    <fragment
+        android:id="@+id/bottom_sheet_travel_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#000"
-        android:text="PROCEED PAYMENT"
-        android:textColor="#fff" />
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:navGraph="@navigation/travel_navigation" />
 
 </LinearLayout>

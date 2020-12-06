@@ -4,11 +4,12 @@
     android:id="@+id/list_item_message_sent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingEnd="60dp"
-    android:paddingRight="60dp"
-    android:paddingTop="2dp"
+    android:layout_marginBottom="6dp"
     android:paddingStart="8dp"
-    android:paddingLeft="8dp">
+    android:paddingLeft="8dp"
+    android:paddingTop="2dp"
+    android:paddingEnd="60dp"
+    android:paddingRight="60dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/icon"
@@ -24,18 +25,18 @@
         android:id="@+id/message_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/icon"
         android:layout_toRightOf="@+id/icon"
-        android:minWidth="70dp"
-        android:maxWidth="350dp"
         android:background="@drawable/message_received"
+        android:maxWidth="350dp"
+        android:minWidth="70dp"
         android:paddingLeft="13dp"
         android:paddingTop="9dp"
-        android:paddingBottom="9dp"
         android:paddingRight="13dp"
+        android:paddingBottom="9dp"
         android:text="Somehow this layout is not working for me. All I see is a white little round corner rectangle at the top left corner and a bigger grey arrow is seen overlapped. Any idea what am I missing?"
         android:textColor="@color/colorWhite"
-        android:textSize="16dp"
-        android:layout_toEndOf="@+id/icon" />
+        android:textSize="16dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

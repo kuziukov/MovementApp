@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="12dp"
@@ -29,7 +30,7 @@
         android:gravity="center_vertical"
         android:text="Dmitrii Kuziukov"
         android:textColor="@color/colorLightBlack"
-        android:textSize="16sp" />
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/chat_date_txt"
@@ -38,11 +39,11 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_above="@id/chat_description"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center_vertical"
-        android:text="12:04PM"
+        android:text="12:04"
         android:textSize="12sp" />
 
     <TextView
@@ -60,7 +61,8 @@
         android:text="2"
         android:textAlignment="center"
         android:textColor="#FFF"
-        android:textSize="10sp" />
+        android:textSize="10sp"
+        tools:ignore="RtlCompat" />
 
 
     <ImageView

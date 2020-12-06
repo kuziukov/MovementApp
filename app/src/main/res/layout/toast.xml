@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toast_layout_root"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toast_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/colorLightBlack"
+        app:cardCornerRadius="4dp"
+        android:elevation="10dp">
+
+        <TextView android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="18dp"
+            android:paddingHorizontal="24dp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="#FFF" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

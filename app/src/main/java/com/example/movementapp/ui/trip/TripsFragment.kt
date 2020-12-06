@@ -7,6 +7,7 @@ import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.location.Location
@@ -23,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.movementapp.MainActivity
 import com.example.movementapp.R
 import com.google.android.gms.common.api.ResolvableApiException
@@ -203,10 +205,13 @@ class TripsFragment : Fragment() {
             getLastLocation()
         }
 
+
+
         sheetBehavior.setBottomSheetCallback(object : BottomSheetCallback() {
             override fun onStateChanged(@NonNull view: View, newState: Int) {
                 when (newState) {
                     BottomSheetBehavior.STATE_HIDDEN -> {
+
                     }
                     BottomSheetBehavior.STATE_EXPANDED -> {
 
@@ -215,8 +220,10 @@ class TripsFragment : Fragment() {
 
                     }
                     BottomSheetBehavior.STATE_DRAGGING -> {
+
                     }
                     BottomSheetBehavior.STATE_SETTLING -> {
+
                     }
                 }
             }

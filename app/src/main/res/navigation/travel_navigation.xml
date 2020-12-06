@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/travel_navigation"
+    app:startDestination="@+id/bottom_sheet_travels">
+
+    <fragment
+        android:id="@+id/bottom_sheet_travels"
+        android:name="com.example.movementapp.ui.trip.TravelsDialogFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/bottom_sheet_travels" >
+        <action
+            android:id="@+id/action_bottom_sheet_travels_to_bottom_sheet_travel_page"
+            app:destination="@id/bottom_sheet_travel_page" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottom_sheet_travel_page"
+        android:name="com.example.movementapp.ui.trip.TravelPageDialogFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/bottom_sheet_travel_page" />
+
+</navigation>

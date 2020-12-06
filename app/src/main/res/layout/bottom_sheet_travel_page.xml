@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_travel_page"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@drawable/bottom_layout_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="222dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_no_avatar"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="0dp" />
+
+        <TextView
+            android:id="@+id/chat_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/icon"
+            android:gravity="center_vertical"
+            android:text="Dmitrii Kuziukov  (4.7)"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/colorLightBlack"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chat_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chat_name_txt"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="15dp"
+            android:maxWidth="220dp"
+            android:layout_toStartOf="@+id/icon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="@font/open_sans"
+            android:text="Последний оставленный отзыв"
+            android:textColor="@color/colorGray"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_below="@id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="4dp"
+            android:background="#5d5d5d"
+            android:layout_toLeftOf="@id/icon"
+            android:layout_toStartOf="@+id/icon" />
+
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_marker"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="740 Valencia St, San Fracisco, CA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="8 (415) 349-0942" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_schedule"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Wed, October 10th, 10 AM - 9 PM" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#000"
+        android:text="BOOKING"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="#fff" />
+
+</LinearLayout>

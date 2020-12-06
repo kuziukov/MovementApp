@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">MovementApp</string>
+    <string name="app_name">FTraveler</string>
+    <string name="welcome">Welcome to Fellow Traveler</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Places</string>
     <string name="title_notifications">Messages</string>
@@ -15,8 +16,7 @@
 
 
     <string name="agree">AGREE AND CONTINUE</string>
-    <string name="welcome">Welcome to APP</string>
-    <string name="privacy">Read our Privacy Policy. Tap \'Agree and continue\' to accept the Terms of Service.</string>
+    <string name="privacy">Read our Privacy Policy. Tap \'Agree and continue\' to accept the <a href="https://www.google.com/">Terms of Service</a>.</string>
 
     <string name="style_json">[
           {
